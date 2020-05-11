@@ -5,7 +5,7 @@ function Airport(weather = new Weather){
 
 Airport.prototype.land = function(plane) {
   if (this._weather.isStormy()) {
-    throw new Error("The god of wind will not allow us to land!")
+    throw new Error("The god of wind will not allow us to land!");
   }
   else
   {
