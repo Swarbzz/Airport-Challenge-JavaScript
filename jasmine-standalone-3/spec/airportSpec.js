@@ -31,8 +31,11 @@ describe("Airport", function() {
     });
 
     it("A plane cannot take off", function() {
-      airport.land(plane);
       expect(function(){ airport.takeoff(plane) }).toThrowError("The winds are too strong captain");
+    });
+
+    it("A plane cannot land", function() {
+      expect(function(){ airport.land(plane) }).toThrowError("The god of wind will not allow us to land!");
     });
   });
 
