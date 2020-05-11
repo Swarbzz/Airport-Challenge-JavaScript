@@ -4,11 +4,16 @@ describe("Airport", function() {
 
   beforeEach(function() {
     airport = new Airport();
-    plane = new plane();
+    plane = new Plane();
   });
 
   it("lands a plane", function() {
     expect(airport.land(plane)).toContain(plane);
   });
-  
+
+  it("changes the status of the plane to landed", function() {
+    airport.land(plane);
+    expect(plane.isLanded()).toEqual(true);
+  });
+
 });
