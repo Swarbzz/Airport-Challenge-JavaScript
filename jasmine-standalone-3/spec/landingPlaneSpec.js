@@ -16,4 +16,10 @@ describe("Airport", function() {
     expect(plane.isLanded()).toEqual(true);
   });
 
+  it("a plane can take off", function() {
+    airport.land(plane);
+    airport.takeoff(plane);
+    expect(plane.isLanded()).not.toContain(plane);
+  });
+
 });

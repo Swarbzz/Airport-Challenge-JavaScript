@@ -9,3 +9,7 @@ Plane.prototype.isLanded = function() {
 Plane.prototype.land = function() {
   this._landed = true;
 };
+
+Plane.prototype.takeoff = function() {
+  this._landed = false;
+};
