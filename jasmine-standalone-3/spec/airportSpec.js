@@ -2,11 +2,13 @@ describe("Airport", function() {
   var plane;
   var airport;
   var weather;
+  var airport2;
 
   beforeEach(function() {
     plane = new Plane();
     weather = new Weather();
     airport = new Airport(weather);
+    airport2 = new Airport(weather, 50)
   });
 
   describe("Weather is clear", function() {
@@ -46,6 +48,10 @@ describe("Airport", function() {
         airport.land(plane);
       }
       expect(function() { airport.land(plane) }).toThrowError("Well it seems the airport is full, can't land sir");
+    });
+
+    it("changes the deafault capacity of the hanger", function() {
+      expect(airport2._defaultCapacity).toEqual(50)
     });
   });
 
