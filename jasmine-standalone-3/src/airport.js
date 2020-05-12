@@ -1,11 +1,15 @@
-function Airport(weather = new Weather){
+function Airport(weather = new Weather, defaultCapacity = 100){
   this._planes = [];
   this._weather = weather
+  this._defaultCapacity = defaultCapacity;
 };
 
 Airport.prototype.land = function(plane) {
   if (this._weather.isStormy()) {
     throw new Error("The god of wind will not allow us to land!");
+  }
+  else if(this._planes.length >= this._defaultCapacity) {
+    throw new Error("Well it seems the airport is full, can't land sir")
   }
   else
   {

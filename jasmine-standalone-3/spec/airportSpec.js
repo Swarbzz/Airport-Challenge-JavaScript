@@ -39,4 +39,14 @@ describe("Airport", function() {
     });
   });
 
+  describe("Airport is full", function() {
+    it("Can't land a plane if the airport is full", function() {
+      spyOn(weather, 'isStormy').and.returnValue(false);
+      for(i = 0; i < airport._defaultCapacity; i++) {
+        airport.land(plane);
+      }
+      expect(function() { airport.land(plane) }).toThrowError("Well it seems the airport is full, can't land sir");
+    });
+  });
+
 });
