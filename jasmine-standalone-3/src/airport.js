@@ -8,7 +8,7 @@ Airport.prototype.land = function(plane) {
   if (this._weather.isStormy()) {
     throw new Error("The god of wind will not allow us to land!");
   }
-  else if(this._planes.length >= this._defaultCapacity) {
+  else if(this.isFull()){
     throw new Error("Well it seems the airport is full, can't land sir")
   }
   else
@@ -31,3 +31,7 @@ Airport.prototype.takeoff = function(plane) {
     return this._planes;
   }
 };
+
+Airport.prototype.isFull = function() {
+  if (this._planes.length >= this._defaultCapacity){ return true }else{ return false }
+}
