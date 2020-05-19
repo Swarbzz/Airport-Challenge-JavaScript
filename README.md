@@ -14,7 +14,7 @@
 
 ## Task
 
-My task was to create a previous Makers Academy that was created with Ruby and re-create it in JavaScript. The tasks for completeing the project are written in the form on user stories below:
+My task was to create a previous Makers Academy that was created with Ruby and re-create it in JavaScript. The tasks for completeing the project are written in the form of user stories below:
 
 ```
 As an air traffic controller
